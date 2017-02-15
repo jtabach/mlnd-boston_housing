@@ -13264,10 +13264,7 @@ MjMzMzOzruEGkJmZmZmZdY3/AptHZDJ2ju2IAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>max_depth = 1: Seems to have very limited training data since the r2 score the training and testing sets are both performing very poorly. Not enough data to limit error.</p>
-<p>max_depth = 3: Seems to be the ideal max_depth for this model. The training and testings sets both converge at around the same r2 score and the highest training score of the 4 graphs.</p>
-<p>max_depth = 6: The amount of training data is causing the model to have a high variance and overfit the data. While the training r2 score improves over that of 'max_depth = 3' the testing r2 score is decreasing.</p>
-<p>max_depth = 10: At this point the model is very overfitting. Very high training r2 score with very low standard deviation. Though the testing r2 score is worse than the previous 2 max-depths.</p>
+<p>max_depth = 3: As the number of training points increases, the error for the training set increases and the error for the testing set decreases. The learning curves coverge around an r2 score of 0.8.</p>
 
 </div>
 </div>
@@ -13792,7 +13789,7 @@ lbapDMlyAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>Grid search technique is creating multiple combinations of parameter tunes into a dictionary, and passing an algorithm to generate a grid. The grid can then be fitted to return the optimal parameter combination. Hence optimizing our learning algorithm.</p>
+<p>Grid search technique is creating multiple combinations of parameter tunes into a dictionary, and be guided through a performance matrix, typically cross-validation on the training set. The grid can then be fitted to return the optimal parameter combination. Hence fine tuning our learning algorithm for a more successful learning and testing performance.</p>
 
 </div>
 </div>
@@ -13814,8 +13811,8 @@ lbapDMlyAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>k-fold cross validation training technique is breaking your data into multiple (k) training and testing sets so that you don't "waste" any data (Use all data for training and testing). This allows you to run it (k) times. Then you can average the test results from the (k) tests.</p>
-<p>Without using k-fold cross validation you are more likely to overfit the data and have poor accuracy.</p>
+<p>k-fold cross validation requires the data be broken into k subsets and the holdout method is done k times. For each test, the one of the k subets is held out and used as a testing set where the remaining k subsets are combined and used as the training set. This is repeated until each k subset has been used as a testing set. This maximizes the training and testing data for the best possible learning result and validation.</p>
+<p>The average performance metric score is cumputed across all tests. When the dataset is small, this form of validation is especially useful.</p>
 
 </div>
 </div>
